@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Reseta margens, padding e aplica box-sizing em todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Fonte Montserrat aplicada */
+}
+
+/* Estilos para o corpo da página */
+body {
+    background-color: #c9d6ff; /* Cor de fundo sólida */
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff); /* Gradiente como fundo */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-direction: column; /* Organiza elementos em coluna */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+}
+
+/* Container principal para os formulários */
+.container {
+    background-color: #fff; /* Cor de fundo branca para o container */
+    border-radius: 30px; /* Bordas arredondadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35); /* Sombra ao redor do container */
+    position: relative; /* Necessário para posicionamento absoluto dos formulários */
+    overflow: hidden; /* Oculta o excesso de conteúdo */
+    width: 768px; /* Largura fixa */
+    max-width: 100%; /* Limita a largura máxima a 100% da tela */
+    min-height: 480px; /* Altura mínima do container */
+}
+
+/* Estilos para parágrafos dentro do container */
+.container p {
+    font-size: 14px; /* Tamanho da fonte */
+    line-height: 20px; /* Espaçamento entre linhas */
+    letter-spacing: 0.3px; /* Espaçamento entre letras */
+    margin: 20px 0; /* Margem vertical */
+}
+
+/* Estilos para spans dentro do container */
+.container span {
+    font-size: 12px; /* Tamanho da fonte para spans */
+}
+
+/* Estilos para links dentro do container */
+.container a {
+    color: #333; /* Cor do texto dos links */
+    font-size: 13px; /* Tamanho da fonte */
+    text-decoration: none; /* Remove sublinhado */
+    margin: 15px 0 10px; /* Margem vertical para links */
+}
+
+/* Estilos para botões dentro do container */
+.container button {
+    background-color: #512da8; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    font-size: 12px; /* Tamanho da fonte */
+    padding: 10px 45px; /* Espaçamento interno do botão */
+    border: 1px solid transparent; /* Borda transparente por padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-weight: 600; /* Peso da fonte */
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+    text-transform: uppercase; /* Transforma texto para letras maiúsculas */
+    margin-top: 10px; /* Margem superior */
+    cursor: pointer; /* Muda o cursor para indicar clicável */
+}
+
+/* Estilos para botões ocultos */
+.container button.hidden {
+    background-color: transparent; /* Fundo transparente */
+    border-color: #fff; /* Borda branca */
+}
+
+/* Estilos para formulários dentro do container */
+.container form {
+    background-color: #fff; /* Cor de fundo do formulário */
+    display: flex; /* Define como flex container */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-direction: column; /* Organiza elementos em coluna */
+    padding: 0 40px; /* Padding lateral */
+    height: 100%; /* Altura do formulário ocupa 100% do container */
+}
+
+/* Estilos para inputs dentro do container */
+.container input {
+    background-color: #eee; /* Cor de fundo dos inputs */
+    border: none; /* Remove borda padrão */
+    margin: 8px 0; /* Margem vertical entre inputs */
+    padding: 10px 15px; /* Espaçamento interno dos inputs */
+    font-size: 13px; /* Tamanho da fonte */
+    border-radius: 8px; /* Bordas arredondadas */
+    width: 100%; /* Largura total */
+    outline: none; /* Remove contorno ao focar */
+}
+
+/* Estilos para containers de formulário */
+.form-container {
+    position: absolute; /* Para permitir a sobreposição */
+    top: 0; /* Posiciona no topo */
+    height: 100%; /* Altura total do container */
+    transition: all 0.6s ease-in-out; /* Transição suave */
+}
+
+/* Estilos para a seção de login */
+.sign-in {
+    left: 0; /* Posiciona à esquerda */
+    width: 50%; /* Largura de 50% */
+    z-index: 2; /* Colocação acima da seção de registro */
+}
+
+/* Quando a classe active é adicionada, move a seção de login */
+.container.active .sign-in {
+    transform: translateX(100%); /* Move 100% para a direita */
+}
+
+/* Estilos para a seção de registro */
+.sign-up {
+    left: 0; /* Posiciona à esquerda */
+    width: 50%; /* Largura de 50% */
+    opacity: 0; /* Começa invisível */
+    z-index: 1; /* Colocação abaixo da seção de login */
+}
+
+/* Quando a classe active é adicionada, move e torna visível a seção de registro */
+.container.active .sign-up {
+    transform: translateX(100%); /* Move 100% para a direita */
+    opacity: 1; /* Torna visível */
+    z-index: 5; /* Colocação acima da seção de login */
+    animation: move 0.6s; /* Aplica a animação definida */
+}
+
+/* Animação personalizada */
+@keyframes move {
+    0%, 49.99% {
+        opacity: 0; /* Começa invisível */
+        z-index: 1; /* Colocação abaixo */
+    }
+    50%, 100% {
+        opacity: 1; /* Torna-se visível */
+        z-index: 5; /* Colocação acima */
+    }
+}
+
+/* Estilos para ícones sociais */
+.social-icons {
+    margin: 20px 0; /* Margem vertical */
+}
+
+/* Estilos para links de ícones sociais */
+.social-icons a {
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 20%; /* Bordas arredondadas */
+    display: inline-flex; /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin: 0 3px; /* Margem horizontal */
+    width: 40px; /* Largura fixa */
+    height: 40px; /* Altura fixa */
+}
+
+/* Container de alternância entre login e registro */
+.toggle-container {
+    position: absolute; /* Para permitir a sobreposição */
+    top: 0; /* Posiciona no topo */
+    left: 50%; /* Posiciona à esquerda */
+    width: 50%; /* Largura de 50% */
+    height: 100%; /* Altura total */
+    overflow: hidden; /* Oculta qualquer conteúdo excessivo */
+    transition: all 0.6s ease-in-out; /* Transição suave */
+    border-radius: 150px 0 0 100px; /* Bordas arredondadas em um lado */
+    z-index: 1000; /* Colocação acima do restante */
+}
+
+/* Quando a classe active é adicionada, move a seção de alternância */
+.container.active .toggle-container {
+    transform: translateX(-100%); /* Move 100% para a esquerda */
+    border-radius: 0 150px 100px 0; /* Ajusta bordas arredondadas */
+}
+
+/* Estilos para a área de alternância */
+.toggle {
+    background-color: #512da8; /* Cor de fundo */
+    height: 100%; /* Altura total */
+    background: linear-gradient(to right, #5c6bc0, #512da8); /* Gradiente */
+    color: #fff; /* Cor do texto */
+    position: relative; /* Para permitir posicionamento relativo */
+    left: -100%; /* Começa fora da tela à esquerda */
+    height: 100%; /* Altura total */
+    width: 200%; /* Largura do painel de alternância */
+    transform: translateX(0); /* Começa na posição original */
+    transition: all 0.6s ease-in-out; /* Transição suave */
+}
+
+/* Quando a classe active é adicionada, move a área de alternância */
+.container.active .toggle {
+    transform: translateX(50%); /* Move 50% para a direita */
+}
+
+/* Estilos para os painéis de alternância */
+.toggle-panel {
+    position: absolute; /* Para permitir a sobreposição */
+    width: 50%; /* Largura de 50% */
+    height: 100%; /* Altura total */
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-direction: column; /* Organiza elementos em coluna */
+    padding: 0 30px; /* Padding lateral */
+    text-align: center; /* Centraliza texto */
+    top: 0; /* Posiciona no topo */
+    transform: translateX(0); /* Começa na posição original */
+    transition: all 0.6s ease-in-out; /* Transição suave */
+}
+
+/* Painel à esquerda do alternador */
+.toggle-left {
+    transform: translateX(-200%); /* Move 200% para a esquerda */
+}
+
+/* Quando a classe active é adicionada, traz o painel à esquerda para a posição original */
+.container.active .toggle-left {
+    transform: translateX(0); /* Move para a posição original */
+}
+
+/* Painel à direita do alternador */
+.toggle-right {
+    right: 0; /* Posiciona à direita */
+    transform: translateX(0); /* Começa na posição original */
+}
+
+/* Quando a classe active é adicionada, move o painel à direita para fora da tela */
+.container.active .toggle-right {
+    transform: translateX(200%); /* Move 200% para a direita */
+}

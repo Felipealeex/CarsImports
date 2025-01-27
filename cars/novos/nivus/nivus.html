@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Imports</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+     <!-- AOS Animations -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="../../../index.html" class="logo">
+                <img src="../../../logo.png" alt="Logo" class="logo-img">
+            </a>
+
+            <button class="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../../../inicio.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="../../../cars/luxos/luxury-cars.html"><i class="fas fa-crown"></i> Carros de Luxo</a></li>
+                    <li><a href="../../../cars/usados/used-cars.html"><i class="fas fa-car"></i> Carros Usados</a></li>
+                    <li><a href="../../../cars/novos/new-cars.html"><i class="fas fa-car-side"></i> Carros Novos</a></li>
+                    <li><a href="../../../cars/add-car/index.html"><i class="fas fa-plus-circle"></i> Adicionar</a></li>
+                    <li><a href="https://api.whatsapp.com/send/?phone=5511986981750"><i class="fab fa-whatsapp"></i> Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<br>
+<br>
+<br>
+    <!-- Car Showcase Section -->
+    <section class="car-showcase">
+        <div class="car-images">
+            <img id="main-image" src="frente.jpg" alt="Carro Principal" onclick="openLightbox('frente.jpg')">
+            <div class="thumbnails">
+                <img src="tras.jpg" alt="Carro 1" class="thumbnail" onclick="openLightbox('tras.jpg')">
+                <img src="dentro.jpg" alt="Carro 2" class="thumbnail" onclick="openLightbox('dentro.jpg')">
+                <img src="dianteira.jpg" alt="Carro 3" class="thumbnail" onclick="openLightbox('dianteira.jpg')">
+                <img src="lado.jpg" alt="Carro 4" class="thumbnail" onclick="openLightbox('lado.jpg')">
+                <img src="frente.jpg" alt="Carro 5" class="thumbnail" onclick="openLightbox('frente.jpg')">
+                <img src="banco.jpg" alt="Carro 6" class="thumbnail" onclick="openLightbox('banco.jpg')">
+                <img src="roda.jpg" alt="Carro 7" class="thumbnail" onclick="openLightbox('roda.jpg')">
+                <img src="motor.jpg" alt="Carro 8" class="thumbnail" onclick="openLightbox('motor.jpg')">
+                <img src="porta.jpg" alt="Carro 9" class="thumbnail" onclick="openLightbox('porta.jpg')">
+            </div>
+        </div>
+        <div class="car-details">
+            <h1>Volkswagen Nivus - Ano 2023</h1>
+            <h2>Preço: R$ 120.000,00</h2>
+            <p class="info">Localização: Salvador, BA</p>
+            <p class="highlights">Veículo zero quilômetro, pronto para ser registrado e transferido para o primeiro proprietário. Documentação completa e garantia de fábrica de 3 anos.</p>
+
+            <div class="cta-buttons">
+                <div class="cta-buttons">
+                    <a href="./pagamento/pagamento.html" class="buy-now"> Compre Agora</a>
+                </div>
+               <!-- Adicionando o link para a página de financiamento -->
+               <div class="cta-buttons">
+                <a href="./financiamento/financing.html?value=120000" class="finance-button"> Financiar Carro</a>
+            </div>
+            
+
+            </div>
+
+            <p class="description">
+                Apresentamos o Volkswagen Nivus, um SUV compacto que une estilo, tecnologia e eficiência. Com design moderno e espaço interno otimizado, o Nivus é perfeito para quem busca um carro versátil e confortável para o dia a dia.
+            </p>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="mobile-close" onclick="closeLightbox()">×</span>
+        <img class="lightbox-content" id="lightbox-image">
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+    <!-- Car Specifications -->
+    <section class="specifications">
+        <h3>Detalhes do veículo</h3>
+        <ul>
+            <li><strong>Modelo:</strong> Volkswagen Nivus Highline</li>
+            <li><strong>Categoria:</strong> SUV Compacto</li>
+            <li><strong>Quilometragem:</strong> 0 km (novo)</li>
+            <li><strong>Cor:</strong> Azul Oceano</li>
+            <li><strong>Combustível:</strong> Gasolina</li>
+            <li><strong>Transmissão:</strong> Automática de 6 marchas</li>
+            <li><strong>Potência:</strong> 128 cv</li>
+            <li><strong>Câmbio:</strong> Automático</li>
+            <li><strong>Número de portas:</strong> 4</li>
+            <li><strong>Assentos:</strong> 5</li>
+        </ul>
+    </section>
+
+    <!-- Equipment Section -->
+    <section class="equipment">
+        <h3>Equipamentos e Acessórios</h3>
+        <ul>
+            <li>Ar-condicionado digital automático</li>
+            <li>Sistema de infotainment com tela de 10 polegadas</li>
+            <li>Compatibilidade com Android Auto e Apple CarPlay</li>
+            <li>Câmera de ré e sensores de estacionamento</li>
+            <li>Faróis em LED</li>
+            <li>Rodas de liga leve de 17 polegadas</li>
+            <li>Controle de tração e estabilidade</li>
+            <li>Assistente de partida em rampa</li>
+            <li>Sistema de som com 6 alto-falantes</li>
+            <li>Bancos em tecido com ajuste manual</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+<section class="contact">
+    <h3>Entre em Contato</h3>
+    <div class="contact-btn">
+        <a href="vendedor.html" class="contact-button">Enviar Proposta</a>
+        <a href="vendedor.html" class="contact-button">Falar com o Vendedor</a>
+    </div>
+</section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Imports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('fundo.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 400px;
+            max-width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #007bff;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif; 
+            text-align: center;
+            font-size: 18px;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .back-arrow {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .chat-messages {
+            padding: 10px;
+            flex-grow: 1;
+            overflow-y: auto;
+            height: 300px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+        }
+
+        .message-sent {
+            text-align: right;
+        }
+
+        .message-received {
+            text-align: left;
+        }
+
+        .message {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 20px;
+            margin-bottom: 5px;
+        }
+
+        .message-sent .message {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .message-received .message {
+            background-color: #e9e9eb;
+            color: #333;
+        }
+
+        .chat-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-options button {
+            flex: 1 1 calc(50% - 5px);
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px; /* Tamanho do botão reduzido */
+            font-size: 14px; /* Fonte reduzida */
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .chat-options button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <span class="back-arrow" onclick="window.location.href = '1500.html';">&larr;</span>
+            <h1>Chat com o Vendedor</h1>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- As mensagens aparecerão aqui -->
+        </div>
+        <div class="chat-options">
+            <button onclick="selectOption('Qual é o valor do veículo?')">Qual é o valor do veículo?</button>
+            <button onclick="selectOption('Quais as formas de pagamento?')">Quais as formas de pagamento?</button>
+            <button onclick="selectOption('Posso agendar uma visita?')">Posso agendar uma visita?</button>
+            <button onclick="selectOption('O veículo está disponível para financiamento?')">Disponível para financiamento?</button>
+        </div>
+    </div>
+
+    <script>
+        function addMessage(content, type) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', type);
+            messageElement.innerHTML = `<span class="message">${content}</span>`;
+            document.getElementById('chat-messages').appendChild(messageElement);
+            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+        }
+
+        function selectOption(userMessage) {
+            addMessage(userMessage, 'message-sent');
+            
+            let response;
+            switch (userMessage) {
+                case 'Qual é o valor do veículo?':
+                    response = "O valor deste modelo está em torno de R$ 280.000,00.";
+                    break;
+                case 'Quais as formas de pagamento?':
+                    response = "Aceitamos cartão de crédito, débito, boleto e financiamento.";
+                    break;
+                case 'Posso agendar uma visita?':
+                    response = "Claro! Podemos agendar uma visita para você conhecer o veículo.";
+                    break;
+                case 'O veículo está disponível para financiamento?':
+                    response = "Sim, o veículo pode ser financiado. Entre em contato para saber mais sobre as taxas.";
+                    break;
+                default:
+                    response = "Desculpe, não entendi sua pergunta.";
+                    break;
+            }
+
+            setTimeout(() => addMessage(response, 'message-received'), 500);
+        }
+    </script>
+
+</body>
+</html>

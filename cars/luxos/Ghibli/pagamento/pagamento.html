@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Imports</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <a href="../ghibli.html" class="back-button">&#8592; Voltar para a Página do Carro</a>
+        <h2>Escolha a Forma de Pagamento</h2>
+
+        <!-- Opções de Pagamento -->
+        <div class="payment-option" onclick="showPaymentForm('cartao')">
+            <img src="credito.png" alt="Cartão de Crédito" class="payment-img">
+            <span>Cartão de Crédito</span>
+        </div>
+        <div class="payment-option" onclick="showPaymentForm('cartao')">
+            <img src="debito.png" alt="Cartão de Débito" class="payment-img">
+            <span>Cartão de Débito</span>
+        </div>
+        <div class="payment-option" onclick="showPaymentForm('boleto')">
+            <img src="boleto.png" alt="Boleto" class="payment-img">
+            <span>Boleto Bancário</span>
+        </div>
+
+        <!-- Formulário de Cartão -->
+        <div class="form-container">
+            <h3>Informações do Cartão</h3>
+            <label for="bandeira">Selecione a Bandeira</label>
+            <div class="bandeira-options">
+                <label>
+                    <input type="radio" name="bandeira" value="visa" required>
+                    <img src="visa.png" alt="Visa">
+                    <span>Visa</span>
+                </label>
+                <label>
+                    <input type="radio" name="bandeira" value="mastercard" required>
+                    <img src="mastercard.png" alt="MasterCard">
+                    <span>MasterCard</span>
+                </label>
+                <label>
+                    <input type="radio" name="bandeira" value="amex" required>
+                    <img src="amex.png" alt="American Express">
+                    <span>American Express</span>
+                </label>
+                <label>
+                    <input type="radio" name="bandeira" value="elo" required>
+                    <img src="elo.png" alt="American Express">
+                    <span>Elo</span>
+                </label>
+            </div>
+
+            <input type="text" id="nome" placeholder="Nome no Cartão" required>
+            <input type="text" id="cpf" placeholder="CPF (sem pontos e traços)" required>
+            <input type="text" id="numero" placeholder="Número do Cartão" required>
+            <input type="text" id="validade" placeholder="Data de Validade (MM/AA)" required>
+            <input type="number" id="cvv" placeholder="CVV" required>
+            <button>Pagar</button>
+        </div>
+
+        <!-- Gerar Boleto -->
+        <div class="boleto-container">
+            <h3>Pagamento por Boleto</h3>
+            <button onclick="generateBoleto()">Gerar Boleto</button>
+            <div class="boleto-details"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main, section, div {
+    margin-top: 0;
+    padding-top: 0;
+}
+/* Navbar */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header, main, footer {
+    margin: 0;
+    padding: 0;
+}
+h1, p {
+    margin-top: 0;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    height: 60px;
+    position: relative;
+    margin-bottom: -20px; /* Certifique-se que a navbar não tenha margem inferior */
+}
+
+
+.navbar .logo {
+    margin-left: 20px; /* Margem para a logo */
+}
+
+.logo-image {
+    height: 50px; /* Aumente a altura da imagem da logo conforme necessário */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0; /* Remove margem padrão */
+}
+
+.nav-links li {
+    margin: 0 20px; /* Espaçamento lateral entre os links */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    color: #FF0000;
+}
+section {
+    margin-top: -20px;
+}

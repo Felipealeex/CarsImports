@@ -1,0 +1,2801 @@
+/* styles.css */
+
+/* Estilos Gerais */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding-top: 60px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #000000;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff3838;
+}
+
+.nav-link i {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.nav-link:hover i {
+    color: #ff3838;
+}
+
+/* Estilo especial para o ícone da coroa */
+.nav-link i.fa-crown {
+    color: #ffd700;
+}
+
+/* Estilo para o botão de login */
+.login-btn {
+    background: #ff3838;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #ff2424;
+    transform: scale(1.05);
+}
+
+/* Menu Hamburguer */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: #000000;
+        flex-direction: column;
+        padding: 2rem;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    /* Animação do hamburger */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .login-btn {
+        margin-top: 1rem;
+    }
+}
+
+/* Ajuste do padding do body para a navbar fixa */
+body {
+    padding-top: 60px;
+}
+
+/* Seção de Novos Carros */
+.new-cars-section {
+    padding: 2rem; /* Espaçamento interno para dar respiro */
+    padding-top: 2rem;
+}
+
+/* Container principal dos cards */
+.cars-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-flow: dense;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    background: rgba(15, 15, 15, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateX(0);
+    width: 300px;
+}
+
+.card[style*="display: none"] {
+    width: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+/* Estilização da scrollbar */
+.cars-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cars-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.cars-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 56, 56, 0.3);
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .card-row {
+        grid-template-columns: repeat(auto-fill, 280px);
+        gap: 1rem;
+    }
+
+    .card {
+        width: 280px;
+    }
+}
+
+/* Animação para suavizar o movimento dos cards */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #ff3838;
+}
+
+.card-content {
+    padding: 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1;
+}
+
+.card h3 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+}
+
+.card h4 {
+    display: flex !important;
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 1rem !important;
+}
+
+.card h4 span {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    background: rgba(255, 56, 56, 0.1) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 5px !important;
+    font-size: 0.8rem !important;
+    color: #ffffff !important;
+}
+
+.card h4 i {
+    color: #ff3838 !important;
+}
+
+.card p {
+    color: #999999 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin: 1.5rem !important;
+    flex-grow: 1 !important;
+}
+
+.card .price {
+    color: #ff3838 !important;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    padding: 1.5rem !important;
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.card .service-button {
+    background: transparent !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    padding: 1.2rem !important;
+    border: none !important;
+    border-top: 1px solid #ff3838 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.card .service-button:hover {
+    background: #ff3838 !important;
+    letter-spacing: 3px !important;
+    box-shadow: 0 5px 15px rgba(255, 56, 56, 0.3) !important;
+}
+
+/* Adicionar ícone ao botão */
+.card .service-button::after {
+    content: '\f054' !important; /* Ícone de seta do FontAwesome */
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900 !important;
+    opacity: 0 !important;
+    transform: translateX(-20px) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Animação do ícone no hover */
+.card .service-button:hover::after {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* Efeito de brilho no hover */
+.card .service-button::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    ) !important;
+    transition: 0.5s !important;
+}
+
+/* Animação do efeito de brilho */
+.card .service-button:hover::before {
+    left: 100% !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .card img {
+        height: 200px !important;
+    }
+
+    .card h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .card .price {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Ajustes do botão */
+.service-button {
+    text-decoration: none; /* Remove a sublinha dos links */
+    display: inline-block; /* Mantém o link como bloco inline */
+    padding: 0.5rem 1rem; /* Espaçamento interno do botão */
+    background-color: #000; /* Fundo preto */
+    color: white; /* Cor do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-weight: bold; /* Texto em negrito */
+    margin-top: 1rem; /* Margem superior */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Adiciona transio suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse */
+.service-button:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho no hover */
+    background-color: #FF0000; /* Muda a cor do fundo no hover */
+}
+
+/* Estilos para tornar o site responsivo */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Alinha os links verticalmente em telas menores */
+        background-color: #333; /* Fundo da navbar em telas menores */
+        position: absolute; /* Para que a navbar flutue */
+        top: 60px; /* Distância do topo */
+        left: 0;
+        width: 100%; /* Largura total */
+        display: none; /* Esconde inicialmente */
+    }
+
+    .nav-links.active {
+        display: flex; /* Exibe a navbar quando ativa */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Ajusta margem em telas menores */
+    }
+
+    .logo-image {
+        height: 40px; /* Diminui a altura da logo em telas menores */
+    }
+}
+
+/* Botão Flutuante */
+.floating-button {
+    position: fixed; /* Fica fixo na tela */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    background-color: #ff9800; /* Cor de fundo do botão */
+    border-radius: 50%; /* Bordas arredondadas para botão circular */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra do botão */
+    text-align: center; /* Centraliza o conteúdo dentro do botão */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    width: 60px; /* Ajuste a largura do botão */
+    height: 60px; /* Ajuste a altura do botão */
+}
+
+/* Ajusta a imagem dentro do botão */
+.floating-image {
+    width: 100%; /* A imagem ocupa toda a largura do botão */
+    height: 100%; /* A imagem ocupa toda a altura do botão */
+    border-radius: 50%; /* Adiciona bordas arredondadas à imagem */
+    object-fit: cover; /* Garante que a imagem preencha o espaço */
+    display: block; /* Certifica que não haja espaço embaixo da imagem */
+}
+
+/* Seção de Filtros */
+.filter-section {
+    padding: 2rem;
+    margin-top: -1rem;
+}
+
+.filter-container {
+    background: rgba(15, 15, 15, 0.95);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.filter-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter-item i {
+    position: absolute;
+    left: 15px;
+    color: #ff3838;
+    font-size: 1.1rem;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff3838' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+.filter-select:hover, .filter-select:focus {
+    border-color: #ff3838;
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.filter-select option {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px;
+}
+
+.filter-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 200px;
+    margin: 0 auto;
+    padding: 12px 25px;
+    background: #ff3838;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-button:hover {
+    background: #ff2424;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 56, 56, 0.3);
+}
+
+.filter-button i {
+    font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filter-section {
+        padding: 1rem;
+    }
+
+    .filter-container {
+        padding: 1.5rem;
+    }
+
+    .filter-group {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .filter-button {
+        width: 100%;
+    }
+}
+
+/* Animação de loading para o botão (opcional) */
+.filter-button.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.filter-button.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: button-loading 0.8s linear infinite;
+}
+
+@keyframes button-loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ajustes de Responsividade */
+@media (max-width: 1200px) {
+    .card-row {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .card {
+        width: calc(50% - 2rem);
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filter {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .filter select {
+        width: 60%;
+        margin-right: 0;
+    }
+
+    .filter-button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .card {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .new-cars-section {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 0.8rem;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .floating-button {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 320px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .logo-image {
+        height: 30px;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+    }
+
+    .service-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Filtros */
+.filter-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter label {
+    font-size: 0.9rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter select {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter select:hover {
+    border-color: #ff3838;
+}
+
+.filter-button {
+    background: #ff3838;
+    color: white;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.filter-button:hover {
+    background: #ff2424;
+    transform: scale(1.05);
+}
+
+/* Cards dos Carros */
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #ff3838;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.card h4 {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #999;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #ff3838;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.service-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border: 1px solid #ff3838;
+}
+
+.service-button:hover {
+    background: #ff3838;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .filter {
+        width: 100%;
+    }
+
+    .card-row {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
+
+/* Controles do Filtro */
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.toggle-filter-btn, .reset-filter-btn {
+    background: rgba(15, 15, 15, 0.95);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.toggle-filter-btn:hover {
+    background: #ff3838;
+    border-color: #ff3838;
+    transform: translateY(-2px);
+}
+
+.reset-filter-btn {
+    background: rgba(255, 56, 56, 0.2);
+    border-color: #ff3838;
+}
+
+.reset-filter-btn:hover {
+    background: #ff3838;
+    transform: translateY(-2px);
+}
+
+/* Animação do container de filtros */
+.filter-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    opacity: 0;
+}
+
+.filter-container.active {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+/* Resto dos estilos do filtro permanecem iguais */
+
+/* Animação de rotação para o botão reset */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotating {
+    animation: rotate 0.5s ease-in-out;
+}
+
+/* Animação do ícone do filtro */
+.toggle-filter-btn i {
+    transition: transform 0.3s ease;
+}
+
+.toggle-filter-btn:hover i {
+    transform: rotate(180deg);
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 3rem;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.95);
+    border-radius: 15px;
+    margin: 2rem auto;
+}
+
+.no-results-message i {
+    font-size: 3rem;
+    color: #ff3838;
+    margin-bottom: 1rem;
+}
+
+.no-results-message h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.no-results-message p {
+    color: #999;
+}
+
+/* Grid responsivo com cards maiores */
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    padding: 2.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Estilos dos Cards */
+.card {
+    background: rgba(15, 15, 15, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #ff3838;
+}
+
+.card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.card h4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 0;
+}
+
+.card h4 span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ccc;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.card h4 span:hover {
+    background: rgba(255, 56, 56, 0.1);
+    color: #fff;
+}
+
+.card h4 i {
+    color: #ff3838;
+    font-size: 1rem;
+}
+
+.card p {
+    color: #999;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin: 0;
+    flex-grow: 1;
+    min-height: 80px;
+}
+
+.price {
+    font-size: 2rem;
+    color: #ff3838;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid #ff3838;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.service-button:hover {
+    background: #ff3838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 56, 56, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .card-row {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-row {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .price {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animação suave ao carregar os cards */
+.card {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay para cada card */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Grid layout */
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Card base */
+.card {
+    background: rgba(15, 15, 15, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding-bottom: 0;
+}
+
+/* Imagem do card */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #ff3838;
+}
+
+/* Título do carro */
+.card h3 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Container de tags */
+.card .tags {
+    display: flex;
+    gap: 0.8rem;
+    margin: 0 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Tags individuais */
+.card .tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 56, 56, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.card .tag i {
+    color: #ff3838;
+}
+
+/* Descrição */
+.card p {
+    color: #999999;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Preço */
+.card .price {
+    color: #ff3838;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Botão mais detalhes */
+.service-button {
+    background: transparent !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    padding: 0.8rem 2rem !important;
+    border: 1px solid #ff3838 !important;
+    border-radius: 25px !important;
+    width: auto !important;
+    height: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin: 1.5rem auto !important;
+    transition: all 0.3s ease !important;
+    font-family: 'Orbitron', sans-serif !important;
+    gap: 8px !important;
+}
+
+/* Hover do botão */
+.service-button:hover {
+    background: #ff3838 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(255, 56, 56, 0.2) !important;
+}
+
+/* Ícone do botão */
+.service-button::after {
+    content: '\f054' !important; /* Ícone de seta do FontAwesome */
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900 !important;
+    font-size: 0.7rem !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* Animação do ícone no hover */
+.service-button:hover::after {
+    transform: translateX(3px) !important;
+}
+
+/* Container do botão */
+.button-container {
+    text-align: center !important;
+    padding: 0.5rem 0 1.5rem 0 !important;
+    background: transparent !important;
+}
+
+/* Estilo do botão de filtro */
+.filter-button {
+    background: #ff3838;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 1rem;
+}
+
+.filter-button i {
+    font-size: 1rem;
+}
+
+/* Container do filtro */
+.filter-container {
+    background: rgba(15, 15, 15, 0.95);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    margin: 1rem auto;
+    max-width: 1400px;
+    border: 1px solid rgba(255, 56, 56, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 100;
+}
+
+/* Classe ativa do filtro */
+.filter-container.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Layout horizontal dos filtros */
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Grupos de filtro */
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Título do grupo de filtro */
+.filter-group h4 {
+    color: #ff3838;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 100px;
+    margin: 0;
+}
+
+/* Container das opções */
+.filter-options-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Opções individuais */
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.filter-option:hover {
+    background: rgba(255, 56, 56, 0.1);
+    color: #ff3838;
+}
+
+/* Estilo do checkbox */
+.filter-option input[type="checkbox"] {
+    display: none;
+}
+
+/* Estilo quando selecionado */
+.filter-option input[type="checkbox"]:checked + span {
+    color: #ff3838;
+}
+
+/* Botão de filtro */
+.filter-button {
+    background: #ff3838;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 1rem auto;
+}
+
+.filter-button:hover {
+    background: #ff2424;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .filter-options-list {
+        width: 100%;
+    }
+}
+
+/* Container principal do filtro */
+.filter-container {
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.95), rgba(15, 15, 15, 0.98));
+    padding: 2.5rem;
+    border-radius: 20px;
+    margin: 2rem auto;
+    max-width: 1400px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 56, 56, 0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Layout dos filtros com mais espaço */
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Grupos de filtro */
+.filter-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Ícones dos grupos */
+.filter-group::before {
+    left: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Container das opções com mais espaço */
+.filter-options-list {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+/* Opções individuais mais espaçadas */
+.filter-option {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Título do grupo com mais espaço */
+.filter-group h4 {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    min-width: 140px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+}
+
+/* Ajuste do texto das opções */
+.filter-option span {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* Efeitos hover melhorados */
+.filter-option:hover {
+    background: rgba(255, 56, 56, 0.1);
+    border-color: rgba(255, 56, 56, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 56, 56, 0.1);
+}
+
+/* Estilo quando selecionado */
+.filter-option input[type="checkbox"]:checked + span {
+    color: #ff3838;
+    font-weight: 600;
+}
+
+.filter-option input[type="checkbox"]:checked + span::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+/* Botão de filtro mais espaçado */
+.filter-button {
+    background: linear-gradient(45deg, #ff3838, #ff5757);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 1.5rem auto;
+    box-shadow: 0 4px 15px rgba(255, 56, 56, 0.2);
+}
+
+/* Responsividade ajustada */
+@media (max-width: 1200px) {
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+
+    .filter-options-list {
+        margin-left: 3rem;
+        margin-top: 1rem;
+    }
+
+    .filter-group h4 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        padding: 1.5rem;
+    }
+
+    .filter-options-list {
+        margin-left: 0;
+    }
+
+    .filter-option {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Container dos filtros */
+.filter-container {
+    display: flex;
+    justify-content: space-between; /* Distribui igualmente */
+    align-items: center;
+    padding: 1.5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Estilo individual de cada filtro */
+.filter-dropdown {
+    flex: 1; /* Cada filtro ocupa espaço igual */
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(25, 25, 25, 0.95);
+    border: 1px solid rgba(255, 56, 56, 0.1);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+}
+
+/* Label do filtro */
+.filter-dropdown span {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    min-width: 80px; /* Largura mínima para o texto */
+}
+
+/* Select do filtro */
+.filter-dropdown select {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    padding-right: 1.5rem;
+}
+
+/* Opções do select */
+.filter-dropdown select option {
+    background: rgba(25, 25, 25, 0.95);
+    color: #ffffff;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .filter-container {
+        flex-wrap: wrap;
+    }
+
+    .filter-dropdown {
+        width: calc(50% - 0.5rem);
+        flex: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .filter-dropdown {
+        width: 100%;
+    }
+}
+
+/* Reset de estilos anteriores */
+.filter-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container principal */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    gap: 3rem; /* Aumentei o gap entre os filtros */
+}
+
+/* Cada filtro individual */
+.filter-dropdown {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(25, 25, 25, 0.95);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    min-width: 200px; /* Largura mínima para cada filtro */
+}
+
+/* Label do filtro */
+.filter-dropdown span {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* Select customizado */
+.filter-dropdown select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 20px;
+}
+
+/* Opções do select */
+.filter-dropdown select option {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .filter-container {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .filter-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .filter-dropdown {
+        width: calc(50% - 0.5rem);
+        flex: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .filter-dropdown {
+        width: 100%;
+    }
+}
+
+/* Área geral dos filtros */
+.filters-section {
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.97) 0%, rgba(20, 20, 20, 0.98) 100%);
+    border-bottom: 2px solid rgba(255, 0, 0, 0.15);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Container principal */
+.filters-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Área dos botões de controle */
+.filters-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Título da seção */
+.filters-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #ffffff;
+}
+
+.filters-title h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Botões de controle */
+.filters-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn.primary {
+    background: #ff3838;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 56, 56, 0.2);
+}
+
+.filter-btn.secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+.filter-btn.primary:hover {
+    box-shadow: 0 6px 20px rgba(255, 56, 56, 0.3);
+}
+
+.filter-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Efeito de onda ao clicar */
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.filter-btn:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+/* Animação do ícone */
+.filter-btn i {
+    transition: transform 0.3s ease;
+}
+
+.filter-btn:hover i {
+    transform: rotate(180deg);
+}
+
+/* Animação de pulso suave */
+.filter-btn.primary {
+    animation: pulse 2s infinite;
+}
+
+/* Keyframes */
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(255, 56, 56, 0.2);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(255, 56, 56, 0.4);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(255, 56, 56, 0.2);
+    }
+}
+
+/* Container dos filtros */
+.filters-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Cada filtro individual */
+.filter-item {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.filter-item:hover {
+    background: rgba(40, 40, 40, 0.95);
+    border-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Cabeçalho do filtro */
+.filter-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.filter-icon {
+    color: #ff3838;
+    font-size: 1.1rem;
+}
+
+.filter-label {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Select customizado */
+.filter-select {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.8rem;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+.filter-select:hover {
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.filter-select option {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .filters-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .filters-wrapper {
+        padding: 0 1rem;
+    }
+
+    .filters-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filters-container {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile-filter-btn {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: #00ff88;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.filters-container {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Estilo para o container do filtro */
+.filter-item {
+    position: relative;
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para o header do filtro */
+.filter-header {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Aumentado o espaçamento entre ícone e texto */
+    margin-bottom: 8px;
+}
+
+/* Estilo para o label */
+.filter-label {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap; /* Evita quebra de linha */
+    padding-left: 24px; /* Espaço para o ícone */
+    position: relative;
+}
+
+/* Estilo para o ícone */
+.filter-icon {
+    position: absolute;
+    left: 0;
+    color: #ff3838;
+    font-size: 1rem;
+}
+
+/* Estilo para o select */
+.filter-select {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.8rem;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+/* Hover state para o select */
+.filter-select:hover {
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Estilo para as opções do select */
+.filter-select option {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 8px;
+}
+
+/* Estilo base do filtro */
+.filter-item {
+    position: relative;
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover com borda radiante */
+.filter-item:hover {
+    border-color: transparent;
+    box-shadow: 0 0 15px rgba(255, 56, 56, 0.2);
+}
+
+.filter-item:hover::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 56, 56, 0.2),
+        rgba(255, 56, 56, 0.1),
+        rgba(255, 56, 56, 0.2)
+    );
+    border-radius: 10px;
+    z-index: -1;
+    animation: borderGlow 2s linear infinite;
+}
+
+/* Animação da borda */
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Mantendo os outros estilos */
+.filter-select {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.8rem;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+/* Animações para os cards */
+.car-card {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mensagem de nenhum resultado */
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    background: rgba(255, 56, 56, 0.1);
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+/* Cores dos ícones na navbar */
+.nav-link .fa-crown {
+    color: #ffd700; /* Dourado para o ícone da coroa */
+}
+
+.nav-link .fa-whatsapp {
+    color: #25D366; /* Verde do WhatsApp */
+}
+
+.nav-link .fa-car,
+.nav-link .fa-car-side,
+.nav-link .fa-plus-circle {
+    color: #ff3838; /* Alterado de var(--primary) para #ff3838 */
+}
+
+.nav-link .fa-home {
+    color: #ff3838; /* Alterado de var(--primary) para #ff3838 */
+}
+
+/* Efeito hover nos ícones */
+.nav-link:hover i {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Mantém a cor do WhatsApp no hover */
+.nav-link:hover i.fab.fa-whatsapp {
+    color: #25D366;
+}
+
+/* Filtros para Mobile */
+@media (max-width: 768px) {
+    .filters-section {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        height: 100vh;
+        background: #111111;
+        padding: 1rem;
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .filters-section.active {
+        right: 0;
+    }
+
+    .filters-mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .close-filters-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .mobile-filter-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 15px rgba(255, 56, 56, 0.3);
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .filter-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .filter-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Container dos Filtros */
+    .filters-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+        background: transparent;
+    }
+
+    .filter-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .filter-header {
+        margin-bottom: 8px;
+    }
+
+    .filter-label {
+        font-size: 0.9rem;
+        color: #ffffff;
+    }
+
+    .filter-icon {
+        font-size: 0.9rem;
+        color: #ff3838;
+        margin-right: 8px;
+    }
+
+    .filter-select {
+        width: 100%;
+        padding: 8px 10px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        color: #ffffff;
+        font-size: 0.85rem;
+        height: 36px;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        background-size: 12px;
+    }
+
+    /* Botões de Controle no rodapé */
+    .filters-buttons {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background: #111111;
+        display: flex;
+        gap: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .filter-btn,
+    .reset-filter-btn {
+        flex: 1;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .filter-btn {
+        background: #ff3838;
+        color: white;
+    }
+
+    .reset-filter-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    /* Ajuste do wrapper para evitar que o conteúdo fique atrás dos botões */
+    .filters-wrapper {
+        height: calc(100vh - 140px);
+        overflow-y: auto;
+        padding-bottom: 60px;
+    }
+
+    /* Estilização da scrollbar */
+    .filters-wrapper::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .filters-wrapper::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .filters-wrapper::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+    }
+
+    /* Botão flutuante de filtro */
+    .mobile-filter-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        font-size: 1rem;
+    }
+
+    /* Ajuste do título principal */
+    .filters-title {
+        margin-bottom: 15px;
+    }
+
+    .filters-title h2 {
+        font-size: 1rem;
+    }
+
+    /* Ajuste do botão de login no menu mobile */
+    .login-btn {
+        background: #ff3838;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: auto;
+        min-width: 100px;
+        max-width: 150px;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .login-btn:hover {
+        background: #ff1f1f;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 992px) {
+        .login-btn {
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            min-width: 80px;
+            margin: 15px auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .login-btn {
+            padding: 5px 14px;
+            font-size: 0.75rem;
+            min-width: 70px;
+        }
+    }
+}
+
+/* Esconde o botão em desktop */
+@media (min-width: 769px) {
+    .mobile-filter-btn {
+        display: none;
+    }
+}
+
+/* Estilos para os filtros */
+.filters-section {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filters-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filters-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filters-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.filters-title h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Botões de controle */
+.filters-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn, .reset-filter-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn {
+    background: #00ff88;
+    color: black;
+}
+
+.reset-filter-btn {
+    background: #ff3366;
+    color: white;
+}
+
+.filters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+}
+
+.filter-icon {
+    color: #00ff88;
+}
+
+.filter-select {
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #00ff88;
+}
+
+/* Animações para os cards */
+.card {
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    display: none;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filters-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filters-container {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile-filter-btn {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: #00ff88;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+}
+
+/* Mensagem de nenhum resultado */
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    color: white;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+/* Estilos Mobile para Filtros */
+@media (max-width: 768px) {
+    .filters-section {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        height: 100vh;
+        background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        padding: 20px;
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .filters-section.active {
+        right: 0;
+    }
+
+    /* Cabeçalho do Filtro Mobile */
+    .filters-mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .filters-mobile-header h3 {
+        color: #ffffff;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .close-filters-btn {
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 1.5rem;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    /* Container dos Filtros */
+    .filters-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        background: transparent;
+    }
+
+    .filter-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .filter-header {
+        margin-bottom: 10px;
+    }
+
+    .filter-select {
+        width: 100%;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: #ffffff;
+        font-size: 0.9rem;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 15px;
+    }
+
+    /* Botão Mobile de Filtro */
+    .mobile-filter-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #ff3838;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 15px rgba(255, 56, 56, 0.3);
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-filter-btn:active {
+        transform: scale(0.95);
+    }
+
+    /* Overlay para quando o filtro estiver aberto */
+    .filter-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .filter-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Botões de Controle */
+    .filters-buttons {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .filter-btn,
+    .reset-filter-btn {
+        flex: 1;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Ajustes para o scroll */
+    .filters-wrapper {
+        height: calc(100vh - 180px); /* Altura total menos header e botões */
+        overflow-y: auto;
+        padding-bottom: 20px;
+    }
+
+    .filters-wrapper::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .filters-wrapper::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .filters-wrapper::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+    }
+}
+
+/* Animações */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

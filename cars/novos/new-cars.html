@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Imports</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="../../logo.png" alt="Cars Imports" class="logo-img">
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="../../inicio.html" class="nav-link">
+                    <i class="fas fa-home"></i> Início
+                </a>
+                <a href="../luxos/luxury-cars.html" class="nav-link">
+                    <i class="fas fa-crown"></i> Carros de Luxo
+                </a>
+                <a href="../usados/used-cars.html" class="nav-link">
+                    <i class="fas fa-car"></i> Carros Usados
+                </a>
+                <a href="../novos/new-cars.html" class="nav-link">
+                    <i class="fas fa-car-side"></i> Carros Novos
+                </a>
+                <a href="../add-car/index.html" class="nav-link">
+                    <i class="fas fa-plus-circle"></i> Adicionar
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=5511986981750" class="nav-link">
+                    <i class="fab fa-whatsapp"></i> Contato
+                </a>
+                <a href="login.php" class="nav-link login-btn">Login</a>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <button class="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção de Filtros -->
+    <section class="filters-section">
+        <div class="filters-mobile-header">
+            <h3>Filtros</h3>
+            <button class="close-filters-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="filters-wrapper">
+            <div class="filters-controls">
+                <div class="filters-title">
+                    <i class="fas fa-car-alt"></i>
+                    <h2>Encontre seu Carro Novo</h2>
+                </div>
+                
+                <div class="filters-buttons">
+                    <button class="filter-btn primary">
+                        <i class="fas fa-filter"></i>
+                        APLICAR FILTROS
+                    </button>
+                    <button class="reset-filter-btn">
+                        <i class="fas fa-undo"></i>
+                        RESETAR FILTROS
+                    </button>
+                </div>
+            </div>
+
+            <!-- Container de Filtros -->
+            <div class="filters-container">
+                <!-- Filtro de Preço -->
+                <div class="filter-item">
+                    <div class="filter-header">
+                        <i class="fas fa-tag filter-icon"></i>
+                        <span class="filter-label">Faixa de Preço</span>
+                    </div>
+                    <select class="filter-select" id="price">
+                        <option value="todas">Todas</option>
+                        <option value="ate-100000">Até R$ 100.000</option>
+                        <option value="110000-140000">R$ 110.000 - R$ 140.000</option>
+                        <option value="acima-150000">Acima de R$ 150.000</option>
+                    </select>
+                </div>
+
+                <!-- Filtro de Cor -->
+                <div class="filter-item">
+                    <div class="filter-header">
+                        <i class="fas fa-palette filter-icon"></i>
+                        <span class="filter-label">Cor</span>
+                    </div>
+                    <select class="filter-select" id="color">
+                        <option value="todas">Todas</option>
+                        <option value="preto">Preto</option>
+                        <option value="branco">Branco</option>
+                        <option value="cinza">Cinza</option>
+                        <option value="azul">Azul</option>
+                        <option value="vermelho">Vermelho</option>
+                    </select>
+                </div>
+
+                <!-- Filtro de Marca -->
+                <div class="filter-item">
+                    <div class="filter-header">
+                        <i class="fas fa-car filter-icon"></i>
+                        <span class="filter-label">Marca</span>
+                    </div>
+                    <select class="filter-select" id="brand">
+                        <option value="todas">Todas</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="renault">Renault</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="jeep">Jeep</option>
+                    </select>
+                </div>
+
+                <!-- Filtro de Categoria -->
+                <div class="filter-item">
+                    <div class="filter-header">
+                        <i class="fas fa-list filter-icon"></i>
+                        <span class="filter-label">Categoria</span>
+                    </div>
+                    <select class="filter-select" id="cate">
+                        <option value="todas">Todas</option>
+                        <option value="hatch">Hatch</option>
+                        <option value="seda">Sedã</option>
+                        <option value="SUV">SUV</option>
+                        <option value="picape">Picape</option>
+                        <option value="crossover">Crossover</option>
+                        <option value="compacto">Compacto</option>
+                        <option value="seda-compacto">Sedã Compacto</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards dos Carros -->
+    <main class="cars-container">
+        <div class="container">
+            <div class="card-row">
+                <!-- Card 1 - Gol -->
+                <div class="card" data-price="70000" data-color="preto" data-brand="volkswagen" data-cate="hatch">
+                    <img src="./gol/frente.jpg" alt="Gol">
+                    <div class="card-content">
+                        <h3>Gol</h3>
+                        <h4>
+                            <span><i class="fas fa-car"></i> Volkswagen</span>
+                            <span><i class="fas fa-palette"></i> Preto</span>
+                            <span><i class="fas fa-tag"></i> Hatch</span>
+                        </h4>
+                        <p>Um hatch compacto e econômico, ideal para a cidade.</p>
+                        <div class="price">R$ 70.000</div>
+                        <a href="./gol/gol.html" class="service-button">Mais Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 - Corolla -->
+                <div class="card" data-price="130000" data-color="cinza" data-brand="toyota" data-cate="seda">
+                    <img src="./corolla/frente.jpg" alt="Corolla">
+                    <div class="card-content">
+                        <h3>Corolla</h3>
+                        <h4>
+                            <span><i class="fas fa-car"></i> Toyota</span>
+                            <span><i class="fas fa-palette"></i> Cinza</span>
+                            <span><i class="fas fa-tag"></i> Sedã</span>
+                        </h4>
+                        <p>Um sedã conhecido pela confiabilidade e baixo consumo.</p>
+                        <div class="price">R$ 130.000</div>
+                        <a href="./corolla/corolla.html" class="service-button">Mais Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 - Renegade -->
+                <div class="card" data-price="150000" data-color="vermelho" data-brand="jeep" data-cate="SUV">
+                    <img src="./renegade/frente.jpg" alt="Renegade">
+                    <div class="card-content">
+                        <h3>Renegade</h3>
+                        <h4>
+                            <span><i class="fas fa-car"></i> Jeep</span>
+                            <span><i class="fas fa-palette"></i> Vermelho</span>
+                            <span><i class="fas fa-tag"></i> SUV</span>
+                        </h4>
+                        <p>Um SUV compacto com estilo robusto e desempenho ágil.</p>
+                        <div class="price">R$ 150.000</div>
+                        <a href="./renegade/renegade.html" class="service-button">Mais Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 - S10 -->
+                <div class="card" data-price="180000" data-color="branco" data-brand="chevrolet" data-cate="picape">
+                    <img src="./s10/frente.jpg" alt="S10">
+                    <div class="card-content">
+                        <h3>S10</h3>
+                        <h4>
+                            <span><i class="fas fa-car"></i> Chevrolet</span>
+                            <span><i class="fas fa-palette"></i> Branco</span>
+                            <span><i class="fas fa-tag"></i> Picape</span>
+                        </h4>
+                        <p>Uma picape média forte e resistente.</p>
+                        <div class="price">R$ 180.000</div>
+                        <a href="./s10/s10.html" class="service-button">Mais Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 - Nivus -->
+                <div class="card" data-price="120000" data-color="azul" data-brand="volkswagen" data-cate="crossover">
+                    <img src="./nivus/frente.jpg" alt="Nivus">
+                    <div class="card-content">
+                        <h3>Nivus</h3>
+                        <h4>
+                            <span><i class="fas fa-car"></i> Volkswagen</span>
+                            <span><i class="fas fa-palette"></i> Azul</span>
+                            <span><i class="fas fa-tag"></i> Crossover</span>
+                        </h4>
+                        <p>Um crossover compacto e eficiente, com design esportivo.</p>
+                        <div class="price">R$ 120.000</div>
+                        <a href="./nivus/nivus.html" class="service-button">Mais Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 - Fox -->
+                <div class="card" data-price="60000" data-color="branco" data-brand="volkswagen" data-cate="hatch">
+                    <img src="./fox/frente.jpg" alt="Fox">
+                    <div class="card-content">
+                        <h3>Fox</h3>
+                        <h4>
+                            <span><i class="fas fa-car"></i> Volkswagen</span>
+                            <span><i class="fas fa-palette"></i> Branco</span>
+                            <span><i class="fas fa-tag"></i> Hatch</span>
+                        </h4>
+                        <p>Um hatch versátil e espaçoso, ideal para a cidade.</p>
+                        <div class="price">R$ 60.000</div>
+                        <a href="./fox/fox.html" class="service-button">Mais Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Card 7 - Kwid -->
+                <div class="card" data-price="65000" data-color="azul" data-brand="renault" data-cate="compacto">
+                    <img src="./kwid/frente.jpg" alt="Kwid">
+                    <div class="card-content">
+                        <h3>Kwid</h3>
+                        <h4>
+                            <span><i class="fas fa-car"></i> Renault</span>
+                            <span><i class="fas fa-palette"></i> Azul</span>
+                            <span><i class="fas fa-tag"></i> Compacto</span>
+                        </h4>
+                        <p>Um carro compacto e econômico, ideal para a cidade.</p>
+                        <div class="price">R$ 65.000</div>
+                        <a href="./kwid/kwid.html" class="service-button">Mais Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Card 8 - Cronos -->
+                <div class="card" data-price="90000" data-color="preto" data-brand="fiat" data-cate="seda-compacto">
+                    <img src="./cronos/frente.jpg" alt="Cronos">
+                    <div class="card-content">
+                        <h3>Cronos</h3>
+                        <h4>
+                            <span><i class="fas fa-car"></i> Fiat</span>
+                            <span><i class="fas fa-palette"></i> Preto</span>
+                            <span><i class="fas fa-tag"></i> Sedã Compacto</span>
+                        </h4>
+                        <p>Um sedã compacto com bom espaço interno.</p>
+                        <div class="price">R$ 90.000</div>
+                        <a href="./cronos/cronos.html" class="service-button">Mais Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>
+

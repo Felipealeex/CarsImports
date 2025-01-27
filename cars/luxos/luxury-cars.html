@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Imports</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="../../logo.png" alt="Cars Imports" class="logo-img">
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="../../inicio.html" class="nav-link">
+                    <i class="fas fa-home"></i> Início
+                </a>
+                <a href="luxury-cars.html" class="nav-link">
+                    <i class="fas fa-crown"></i> Carros de Luxo
+                </a>
+                <a href="../usados/used-cars.html" class="nav-link">
+                    <i class="fas fa-car"></i> Carros Usados
+                </a>
+                <a href="../novos/new-cars.html" class="nav-link">
+                    <i class="fas fa-car-side"></i> Carros Novos
+                </a>
+                <a href="../add-car/index.html" class="nav-link">
+                    <i class="fas fa-plus-circle"></i> Adicionar
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=5511986981750" class="nav-link">
+                    <i class="fab fa-whatsapp"></i> Contato
+                </a>
+                <a href="login.php" class="nav-link login-btn">Login</a>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <button class="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    
+ <!-- Seção de Filtros -->
+ <section class="filters-section">
+    <!-- Cabeçalho Mobile -->
+    <div class="filters-mobile-header">
+        <h3>Filtros</h3>
+        <button class="close-filters-btn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="filters-wrapper">
+        <!-- Título e Botões de Controle -->
+        <div class="filters-controls">
+            <div class="filters-title">
+                <i class="fas fa-car-alt"></i>
+                <h2>Encontre seu Carro de Luxo</h2>
+            </div>
+            
+            <div class="filters-buttons">
+                <button class="filter-btn primary">
+                    <i class="fas fa-filter"></i>
+                    APLICAR FILTROS
+                </button>
+                <button class="reset-filter-btn">
+                    <i class="fas fa-undo"></i>
+                    RESETAR FILTROS
+                </button>
+            </div>
+        </div>
+
+        <!-- Container de Filtros -->
+        <div class="filters-container">
+            <!-- Filtro de Preço -->
+            <div class="filter-item">
+                <div class="filter-header">
+                    <i class="fas fa-tag filter-icon"></i>
+                    <span class="filter-label">Faixa de Preço</span>
+                </div>
+                <select class="filter-select" id="price">
+                    <option value="todas">Todas</option>
+                    <option value="ate-200000">Até R$ 200.000</option>
+                    <option value="200000-400000">R$ 200.000 - R$ 400.000</option>
+                    <option value="acima-400000">Acima de R$ 400.000</option>
+                </select>
+            </div>
+
+            <!-- Filtro de Cor -->
+            <div class="filter-item">
+                <div class="filter-header">
+                    <i class="fas fa-palette filter-icon"></i>
+                    <span class="filter-label">Cor</span>
+                </div>
+                <select class="filter-select" id="color">
+                    <option value="todas">Todas</option>
+                    <option value="preto">Preto</option>
+                    <option value="branco">Branco</option>
+                    <option value="cinza">Cinza</option>
+                    <option value="azul">Azul</option>
+                    <option value="vermelho">Vermelho</option>
+                </select>
+            </div>
+
+            <!-- Filtro de Marca -->
+            <div class="filter-item">
+                <div class="filter-header">
+                    <i class="fas fa-car filter-icon"></i>
+                    <span class="filter-label">Marca</span>
+                </div>
+                <select class="filter-select" id="brand">
+                    <option value="todas">Todas</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                    <option value="bmw">BMW</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="ferrari">Ferrari</option>
+                    <option value="land-rover">Land Rover</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="maserati">Maserati</option>
+                </select>
+            </div>
+
+            <!-- Filtro de Categoria -->
+            <div class="filter-item">
+                <div class="filter-header">
+                    <i class="fas fa-list filter-icon"></i>
+                    <span class="filter-label">Categoria</span>
+                </div>
+                <select class="filter-select" id="cate">
+                    <option value="todas">Todas</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="esportivo">Esportivo</option>
+                    <option value="conversivel">Conversível</option>
+                    <option value="hatch">Hatch</option>
+                    <option value="perua">Perua</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Container Principal dos Cards -->
+<main class="cars-container">
+    <div class="container">
+        <div class="card-row">
+            <!-- Card 1 - Audi A3 -->
+            <div class="card" 
+                 data-price="160000" 
+                 data-color="cinza" 
+                 data-brand="audi" 
+                 data-category="hatch">
+                <img src="./a3/frente.jpg" alt="Audi A3">
+                <div class="card-content">
+                    <h3>Audi A3</h3>
+                    <h4>
+                        <span><i class="fas fa-car"></i> Audi</span>
+                        <span><i class="fas fa-palette"></i> Cinza</span>
+                        <span><i class="fas fa-tag"></i> Hatch</span>
+                    </h4>
+                    <p>Um hatch premium que combina sofisticação com desempenho. Com um interior luxuoso e tecnologia de ponta, oferece uma experiência de condução excepcional.</p>
+                    <div class="price">R$ 160.000</div>
+                    <a href="./a3/a3.html" class="service-button">Mais Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Card 2 - Mercedes C-Class -->
+            <div class="card" 
+                 data-price="220000" 
+                 data-color="preto" 
+                 data-brand="mercedes" 
+                 data-category="sedan">
+                <img src="./cclass/frente.jpg" alt="Mercedes C-Class">
+                <div class="card-content">
+                    <h3>Mercedes C-Class</h3>
+                    <h4>
+                        <span><i class="fas fa-car"></i> Mercedes-Benz</span>
+                        <span><i class="fas fa-palette"></i> Preto</span>
+                        <span><i class="fas fa-tag"></i> Sedan</span>
+                    </h4>
+                    <p>Um sedã esportivo que combina desempenho dinâmico com luxo e conforto. Com um design elegante e tecnologia avançada, é conhecido por sua dirigibilidade precisa.</p>
+                    <div class="price">R$ 220.000</div>
+                    <a href="./cclass/cclass.html" class="service-button">Mais Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Card 3 - Land Rover Discovery Sport -->
+            <div class="card" 
+                 data-price="300000" 
+                 data-color="branco" 
+                 data-brand="land-rover" 
+                 data-category="suv">
+                <img src="./sport/frente.jpg" alt="Discovery Sport">
+                <div class="card-content">
+                    <h3>Discovery Sport</h3>
+                    <h4>
+                        <span><i class="fas fa-car"></i> Land Rover</span>
+                        <span><i class="fas fa-palette"></i> Branco</span>
+                        <span><i class="fas fa-tag"></i> SUV</span>
+                    </h4>
+                    <p>Um SUV de luxo que une elegância e capacidade off-road. Com um interior requintado e recursos tecnológicos, é ideal para aventuras.</p>
+                    <div class="price">R$ 300.000</div>
+                    <a href="./sport/sport.html" class="service-button">Mais Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Card - BMW 1500 -->
+            <div class="card" 
+                 data-price="450000" 
+                 data-color="vermelho" 
+                 data-brand="ram" 
+                 data-category="sedan">
+                <img src="./1500/frente.jpg" alt="BMW 1500">
+                <div class="card-content">
+                    <h3>RAM 1500</h3>
+                    <h4>
+                        <span><i class="fas fa-car"></i> RAM</span>
+                        <span><i class="fas fa-palette"></i> Vermelho</span>
+                        <span><i class="fas fa-tag"></i> Sedan</span>
+                    </h4>
+                    <p>Sedan de luxo que combina elegância e performance. Com acabamento premium e tecnologia de ponta.</p>
+                    <div class="price">R$ 450.000</div>
+                    <a href="./1500/1500.html" class="service-button">Mais Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Card - Porsche Macan -->
+            <div class="card" 
+                 data-price="580000" 
+                 data-color="azul" 
+                 data-brand="porsche" 
+                 data-category="suv">
+                <img src="./macan/frente.jpg" alt="Porsche Macan">
+                <div class="card-content">
+                    <h3>Porsche Macan</h3>
+                    <h4>
+                        <span><i class="fas fa-car"></i> Porsche</span>
+                        <span><i class="fas fa-palette"></i> Azul</span>
+                        <span><i class="fas fa-tag"></i> SUV</span>
+                    </h4>
+                    <p>SUV esportivo que oferece o DNA Porsche em um formato versátil. Performance excepcional com praticidade.</p>
+                    <div class="price">R$ 580.000</div>
+                    <a href="./macan/macan.html" class="service-button">Mais Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Card - BMW Serie 7 -->
+            <div class="card" 
+                 data-price="890000" 
+                 data-color="cinza" 
+                 data-brand="bmw" 
+                 data-category="sedan">
+                <img src="./serie7/frente.jpg" alt="BMW Serie 7">
+                <div class="card-content">
+                    <h3>BMW Serie 7</h3>
+                    <h4>
+                        <span><i class="fas fa-car"></i> BMW</span>
+                        <span><i class="fas fa-palette"></i> Cinza</span>
+                        <span><i class="fas fa-tag"></i> Sedan</span>
+                    </h4>
+                    <p>O ápice do luxo e tecnologia BMW. Sedan executivo com inovações revolucionárias e conforto supremo.</p>
+                    <div class="price">R$ 890.000</div>
+                    <a href="./serie7/serie7.html" class="service-button">Mais Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Card - Volvo V60 -->
+            <div class="card" 
+                 data-price="380000" 
+                 data-color="preto" 
+                 data-brand="volvo" 
+                 data-category="perua">
+                <img src="./v60/frente.jpg" alt="Volvo V60">
+                <div class="card-content">
+                    <h3>Volvo V60</h3>
+                    <h4>
+                        <span><i class="fas fa-car"></i> Volvo</span>
+                        <span><i class="fas fa-palette"></i> Preto</span>
+                        <span><i class="fas fa-tag"></i> Perua</span>
+                    </h4>
+                    <p>Station wagon que combina design escandinavo com segurança e luxo. Versatilidade com elegância.</p>
+                    <div class="price">R$ 380.000</div>
+                    <a href="./v60/v60.html" class="service-button">Mais Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Card - Studio Ghibli -->
+            <div class="card" 
+                 data-price="750000" 
+                 data-color="azul" 
+                 data-brand="maserati" 
+                 data-category="sedan">
+                <img src="./ghibli/frente.jpg" alt="Maserati Ghibli">
+                <div class="card-content">
+                    <h3>Maserati Ghibli</h3>
+                    <h4>
+                        <span><i class="fas fa-car"></i> Maserati</span>
+                        <span><i class="fas fa-palette"></i> Azul</span>
+                        <span><i class="fas fa-tag"></i> Sedan</span>
+                    </h4>
+                    <p>Sedan esportivo italiano que une luxo e performance. Design icônico com motor potente e interior refinado.</p>
+                    <div class="price">R$ 750.000</div>
+                    <a href="./ghibli/ghibli.html" class="service-button">Mais Detalhes</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<!-- Elementos Mobile -->
+<button class="mobile-filter-btn">
+    <i class="fas fa-filter"></i>
+</button>
+
+<div class="filter-overlay"></div>
+
+    <script src="script.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

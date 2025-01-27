@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Imports</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/logo.png" alt="Cars Imports" class="logo-img">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../../inicio.html" class="nav-link">
+                    <i class="fas fa-home"></i> Início
+                </a>
+                
+                <a href="../luxos/luxury-cars.html" class="nav-link">
+                    <i class="fas fa-crown"></i> Carros de Luxo
+                </a>
+                
+                <a href="../usados/used-cars.html" class="nav-link">
+                    <i class="fas fa-car"></i> Carros Usados
+                </a>
+                
+                <a href="../novos/new-cars.html" class="nav-link">
+                    <i class="fas fa-car-side"></i> Carros Novos
+                </a>
+                
+                <a href="./index.html" class="nav-link active">
+                    <i class="fas fa-plus-circle"></i> Adicionar
+                </a>
+                
+                <a href="https://api.whatsapp.com/send/?phone=5511986981750" class="nav-link">
+                    <i class="fab fa-whatsapp"></i> Contato
+                </a>
+                
+                <a href="/login.php" class="nav-link login-btn">Login</a>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <h2><i class="fas fa-car-side"></i> Adicionar Carro</h2>
+        
+        <form id="carForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-signature"></i> Nome:</label>
+                    <input type="text" id="nome" required placeholder="Ex: Mercedes C180">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-alt"></i> Ano:</label>
+                    <select id="ano" required>
+                        <option value="">Selecione o ano</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-building"></i> Marca:</label>
+                    <select id="marca" required>
+                        <option value="">Selecione a marca</option>
+                        <option value="Audi">Audi</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Citroën">Citroën</option>
+                        <option value="Fiat">Fiat</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Kia">Kia</option>
+                        <option value="Land Rover">Land Rover</option>
+                        <option value="Mercedes-Benz">Mercedes-Benz</option>
+                        <option value="Mitsubishi">Mitsubishi</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Peugeot">Peugeot</option>
+                        <option value="Porsche">Porsche</option>
+                        <option value="Renault">Renault</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Volvo">Volvo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-tags"></i> Categoria:</label>
+                    <select id="categoria" required>
+                        <option value="">Selecione a categoria</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Hatch">Hatch</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Picape">Picape</option>
+                        <option value="Cupê">Cupê</option>
+                        <option value="Conversível">Conversível</option>
+                        <option value="Wagon">Wagon</option>
+                        <option value="Van">Van</option>
+                        <option value="Crossover">Crossover</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-tachometer-alt"></i> Quilometragem:</label>
+                    <input type="number" id="quilometragem" required placeholder="Ex: 50000">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-palette"></i> Cor:</label>
+                    <select id="cor" required>
+                        <option value="">Selecione a cor</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                        <option value="Prata">Prata</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Marrom">Marrom</option>
+                        <option value="Bege">Bege</option>
+                        <option value="Dourado">Dourado</option>
+                        <option value="Laranja">Laranja</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-gas-pump"></i> Combustível:</label>
+                    <select id="combustivel" required>
+                        <option value="">Selecione o combustível</option>
+                        <option value="Gasolina">Gasolina</option>
+                        <option value="Etanol">Etanol</option>
+                        <option value="Flex">Flex</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Elétrico">Elétrico</option>
+                        <option value="Híbrido">Híbrido</option>
+                        <option value="GNV">GNV</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-horse-head"></i> Potência:</label>
+                    <input type="number" id="potencia" min="100" max="1000" required placeholder="100-1000 cv">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-cog"></i> Câmbio:</label>
+                    <select id="cambio" required>
+                        <option value="">Selecione o câmbio</option>
+                        <option value="Manual">Manual</option>
+                        <option value="Automático">Automático</option>
+                        <option value="CVT">CVT</option>
+                        <option value="Automatizado">Automatizado</option>
+                        <option value="Semi-automático">Semi-automático</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-door-closed"></i> Número de portas:</label>
+                    <select id="numPortas" required>
+                        <option value="">Selecione o número de portas</option>
+                        <option value="2">2 portas</option>
+                        <option value="3">3 portas</option>
+                        <option value="4">4 portas</option>
+                        <option value="5">5 portas</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-chair"></i> Número de assentos:</label>
+                    <select id="numAssentos" required>
+                        <option value="">Selecione o número de assentos</option>
+                        <option value="2">2 assentos</option>
+                        <option value="4">4 assentos</option>
+                        <option value="5">5 assentos</option>
+                        <option value="7">7 assentos</option>
+                        <option value="8">8 assentos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-info-circle"></i> Estado:</label>
+                    <select id="estado" required>
+                        <option value="">Selecione o estado</option>
+                        <option value="Novo">Novo</option>
+                        <option value="Seminovo">Seminovo</option>
+                        <option value="Usado">Usado</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label><i class="fas fa-list-ul"></i> Equipamentos e Acessórios:</label>
+                    <textarea id="equipamentos" rows="4" required placeholder="Liste os equipamentos e acessórios do veículo"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-dollar-sign"></i> Valor (R$):</label>
+                    <input type="number" id="valor" step="0.01" required placeholder="Ex: 150000.00">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-images"></i> Imagens (máx. 5):</label>
+                    <input type="file" id="imagem" accept="image/*" multiple required>
+                </div>
+            </div>
+
+            <button type="submit">
+                <i class="fas fa-plus-circle"></i> Adicionar Carro
+            </button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Imports - Veículos Premium</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="logo.png" alt="Cars Imports" class="logo-img">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#inicio" class="nav-link">
+                    <i class="fas fa-home"></i> Início
+                </a>
+                
+                <a href="./cars/luxos/luxury-cars.html" class="nav-link">
+                    <i class="fas fa-crown"></i> Carros de Luxo
+                </a>
+                
+                <a href="./cars/usados/used-cars.html" class="nav-link">
+                    <i class="fas fa-car"></i> Carros Usados
+                </a>
+                
+                <a href="./cars/novos/new-cars.html" class="nav-link">
+                    <i class="fas fa-car-side"></i> Carros Novos
+                </a>
+                
+                <a href="./cars/add-car/index.html" class="nav-link">
+                    <i class="fas fa-plus-circle"></i> Adicionar
+                </a>
+                
+                <a href="https://api.whatsapp.com/send/?phone=5511986981750" class="nav-link">
+                    <i class="fab fa-whatsapp"></i> Contato
+                </a>
+                
+                <a href="login.php" class="nav-link login-btn">Login</a>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <section class="hero" id="inicio">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Cars Imports</h1>
+                <p>Sua concessionária premium de veículos importados</p>
+                <div class="hero-buttons">
+                    <a href="#carros" class="btn btn-primary">Ver Carros</a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-section" id="sobre">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Quem Somos</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>NOSSA MISSÃO</h3>
+                    <p>Proporcionar a melhor experiência na compra de veículos premium com transparência e excelência em cada detalhe.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>VALORES</h3>
+                    <p>Comprometimento com a qualidade, integridade em cada negociação e satisfação total dos nossos clientes.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="about-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>VISÃO</h3>
+                    <p>Ser referência no mercado de veículos de luxo, oferecendo as melhores oportunidades e serviços personalizados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services-section" id="servicos">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Nossos Serviços</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="services-grid">
+                <a href="./cars/luxos/luxury-cars.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Carros de Luxo</h3>
+                    <p>Oferecemos carros de luxo exclusivos, desde sedans elegantes a superesportivos, todos selecionados para garantir conforto, estilo e alta tecnologia.</p>
+                    <span class="service-link">
+                        Explorar Luxo <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+                <a href="./cars/usados/used-cars.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <h3>Carros Usados</h3>
+                    <p>Oferecemos uma seleção de carros usados inspecionados, com opções de modelos para atender seu estilo e orçamento.</p>
+                    <span class="service-link">
+                        Ver Usados <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+                <a href="./cars/novos/new-cars.html" class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Carros Novos</h3>
+                    <p>Explore nossa linha de carros novos com os últimos lançamentos das melhores marcas.</p>
+                    <span class="service-link">
+                        Ver Novos <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+                <a href="./cars/add-car/index.html" class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>Anuncie seu Carro</h3>
+                    <p>Quer vender seu carro? Anuncie em nossa plataforma e alcance milhares de compradores interessados.</p>
+                    <span class="service-link">
+                        Anunciar Agora <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="cars-section" id="carros">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Carros em Destaque</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="carrosselCarros swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <img src="./roll/frente.jpg" alt="BMW M4" class="car-image">
+                            <span class="car-tag">Luxo</span>
+                            <div class="car-content">
+                                <h3 class="car-name">Rolls-Royce Phantom</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar"></i> 2023</span>
+                                    <span><i class="fas fa-road"></i> 0 km</span>
+                                    <span><i class="fas fa-gas-pump"></i> Gasolina</span>
+                                </div>
+                                <div class="car-price">R$ 2.200.000,00</div>
+                                <a href="./roll/roll.html" class="btn-details" >Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <img src="./mobi/frente.jpg" alt="Mercedes AMG" class="car-image">
+                            <span class="car-tag">Hatch</span>
+                            <div class="car-content">
+                                <h3 class="car-name">Fiat Mobi</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar"></i> 2019</span>
+                                    <span><i class="fas fa-road"></i> 45.000 km</span>
+                                    <span><i class="fas fa-gas-pump"></i> Flex</span>
+                                </div>
+                                <div class="car-price">R$ 40.000,00</div>
+                                <a href="./mobi/mobi.html" class="btn-details" >Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <img src="./civic/frente.jpg" alt="Porsche 911" class="car-image">
+                            <span class="car-tag">Sedã</span>
+                            <div class="car-content">
+                                <h3 class="car-name">Honda Civic</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar"></i> 2023</span>
+                                    <span><i class="fas fa-road"></i> 0 km</span>
+                                    <span><i class="fas fa-gas-pump"></i> Gasolina</span>
+                                </div>
+                                <div class="car-price">R$ 130.000,00</div>
+                                <a href="./civic/civic.html" class="btn-details" >Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <img src="./cars/luxos/Ghibli/frente.jpg" alt="Audi RS" class="car-image">
+                            <span class="car-tag">Sedã</span>
+                            <div class="car-content">
+                                <h3 class="car-name">Maserati Ghibli</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar"></i> 2023</span>
+                                    <span><i class="fas fa-road"></i> 0 km</span>
+                                    <span><i class="fas fa-charging-station"></i> Gasolina</span>
+                                </div>
+                                <div class="car-price">R$ 890.000,00</div>
+                                <a href="./cars/luxos/Ghibli/ghibli.html" class="btn-details" >Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <img src="./cars/usados/spin/frente.jpg" alt="Lamborghini Huracán" class="car-image">
+                            <span class="car-tag">Minivan</span>
+                            <div class="car-content">
+                                <h3 class="car-name">Chevrolet Spin</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar"></i> 2020</span>
+                                    <span><i class="fas fa-road"></i> 35.000 km</span>
+                                    <span><i class="fas fa-gas-pump"></i> Gasolina</span>
+                                </div>
+                                <div class="car-price">R$ 85.000,00</div>
+                                <a href="./cars/usados/spin/spin.html" class="btn-details" >Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <img src="./cars/novos/corolla/frente.jpg" alt="Ferrari F8" class="car-image">
+                            <span class="car-tag">Sedã</span>
+                            <div class="car-content">
+                                <h3 class="car-name">Toyota Corolla</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar"></i> 2023</span>
+                                    <span><i class="fas fa-road"></i> 0 km</span>
+                                    <span><i class="fas fa-gas-pump"></i> Gasolina</span>
+                                </div>
+                                <div class="car-price">R$ 130.000,00</div>
+                                <a href="./cars/novos/corolla/corolla.html" class="btn-details" >Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Cars Imports" class="footer-logo">
+                    <p>Excelência em veículos importados</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#carros">Carros</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=5511986981750&text=Olá,+gostaria+de+entrar+em+contato+com+o+suporte+da+Car+Imports&type=phone_number&app_absent=0" 
+                               target="_blank">
+                            Contato
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 98698-1750</p>
+                    <div class="social-links">
+                        <a href="https://api.whatsapp.com/send/?phone=5511986981750&text=Olá,+gostaria+de+entrar+em+contato+com+o+suporte+da+Car+Imports&type=phone_number&app_absent=0" 
+                           target="_blank" 
+                           class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cars Imports. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </div>
+    
+</body>
+</html>

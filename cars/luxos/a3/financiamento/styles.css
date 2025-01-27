@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('fundo.jpg') no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px; /* Aumentei a largura do formulário */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+input[type="number"], input[type="radio"] {
+    margin: 5px 0 15px 0;
+}
+
+.bank-options {
+    display: flex;
+    justify-content: space-between; /* Alinha as opções dos bancos uniformemente */
+    flex-wrap: wrap; /* Permite que as opções fiquem em várias linhas se necessário */
+}
+
+.bank-option {
+    text-align: center;
+    margin: 10px;
+}
+
+.bank-option img {
+    width: 100px; /* Define o tamanho das logos dos bancos */
+    height: auto;
+}
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+}
+.back-button:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e7f3fe;
+    border: 1px solid #b9e4fe;
+    border-radius: 4px;
+    display: none;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+}
+.bank-logo {
+    width: 30px; /* Define a largura das logos */
+    height: auto; /* Mantém a proporção da altura */
+    vertical-align: middle; /* Alinha verticalmente as logos com o texto */
+    margin-right: 10px; /* Espaçamento entre a logo e o texto */
+}
+
+.finance-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #e67e22;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.finance-button:hover {
+    background-color: #d35400;
+}
+.insurance-options {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: center; /* Centraliza as linhas */
+    gap: 20px; /* Espaço entre as seguradoras */
+}
+
+.insurance-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 20px); /* Três seguradoras por linha */
+    text-align: center;
+    margin-bottom: 20px; /* Espaço entre as linhas */
+}
+
+.insurance-option img {
+    width: 80px; /* Aumenta o tamanho do logotipo */
+    height: auto;
+    margin-bottom: 10px; /* Espaço entre o logotipo e o nome */
+}
+
+.insurance-option p {
+    font-size: 1.1em;
+    color: #333;
+    margin: 0;
+}
+
+.warranty-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.warranty-section label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+.warranty-section i {
+    font-size: 1.5em; /* Tamanho do ícone */
+    color: #007bff; /* Cor do ícone */
+    margin-right: 8px; /* Espaço entre o ícone e o label */
+}
+
+.warranty-section select {
+    width: 100%; /* Largura completa */
+    padding: 10px; /* Espaço interno */
+    border: 1px solid #ddd; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #fff; /* Fundo branco */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
+
+.warranty-section select:focus {
+    border-color: #007bff; /* Borda azul ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+/* Remoção das bordas e do fundo na seção de meses */
+.months-section {
+    margin-top: 20px;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.months-section label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.months-section .input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 8px 12px;
+}
+
+.months-section .input-wrapper i {
+    font-size: 1.2em;
+    color: #007bff; /* Cor do ícone */
+    margin-right: 8px; /* Espaço entre ícone e input */
+}
+
+.months-section input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #333;
+}
+
+.months-section input[type="number"]::placeholder {
+    color: #999;
+}
+.bank-section label, .insurance-section label {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.bank-section label i,
+.insurance-section label i {
+    font-size: 1.3em; /* Tamanho do ícone */
+    color: #007bff; /* Cor do ícone */
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+}
